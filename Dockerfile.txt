@@ -1,0 +1,16 @@
+# Base Image
+FROM python:3.7
+
+# create and set working directory
+
+WORKDIR /home/ubuntu/pyapps/realtor
+
+# Add current directory code to working directory
+COPY  /home/ubuntu/code /home/ubuntu/pyapps/realtor
+
+# set default environment variables
+ENV PYTHONUNBUFFERED 1
+ENV LANG C.UTF-8
+#ENV DEBIAN_FRONTEND=noninteractive 
+
+RUN pip install -r requirements.txt
